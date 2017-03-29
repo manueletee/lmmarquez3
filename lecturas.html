@@ -116,14 +116,45 @@
 					<strong>LECTURA 2</strong><h3>Herramientas y Usos</h3>
 					<img src="" alt="">
 
-					<br>Los Modelos</br>
+					<br>Herramientas para Modelado</br>
+					<br>
+
+					<img src="img/screenshot.png" class="stuml">
+					<br>
+
 					<p>
-						Son diagramas o imágenes cuya finalidad es
+						Para el modelado se trabajará con <a href="http://staruml.io/">StartUML</a>, el cual pasó a licencia abierta, herendando todas las características de la versión comercial y poco a poco ha ido mejorando sus características, entre las cuales se encuentran:
+						<br>
+
+						<li>Soporte completo al diseño UML mediante el uso de diagramas de casos de uso, clase, secuencia, colaboración, estado, actividad, desplieque, componente y de composición estructural (UML 2.0).</li>
+						<li>Definir elementos propios para los diagramas, que no necesariamente pertenezcan al estándar de UML.</li>
+						<li>La capacidad de generar código a partir de los diagramas y viceversa, actualmente funcionando para los lenguajes c++, c# y java.</li>
+						<li>Generar documentación en formatos Word, Excel y PowerPoint sobre los diagramas.</li>
+						<li>Patrones GoF (Gang of Four) , EJB (Enterprise JavaBeans) y personalizados.</li>
+						<li>Plantillas de proyectos.</li>
+						<li>Posibilidad de crear plugins para el programa.</li>
+					</p>
+					<br>
+
+					<p>
+						El Lenguaje Unificado de Modelado, ordena un conjunto de notaciones y diagramas estándar para modelar sistema orientados a objetos, y describe la semántica esencial de lo que estos diagramas y  símbolos significan. 						
+					</p>
+
+					<br>Modelamiento<br>
+
+					<p>
+						Es un conjunto estandarizado de símbolos y de modos de disponerlos para modelar MDA (Model Driven Architecture). La MDA es una nueva tecnología introducida por el OMG. Para obtener ventajas de la MDA, la herramienta de software de modelado debe apoyar muchas variables de personalización. 
 					</p>
 
 					<p>
-						
-					</p>					
+						Los diagramas de clases de UML se pueden usar para modelar la base de datos relacional en la que el sistema está basado, sin embargo, los diagramas tradicionales de modelado de datos capturan más información sobre la base de datos relacional y son más adecuados para modelarla.
+					</p>
+					<br>
+
+					<p>
+						Los modelos consisten en diagramas o imágenes. Lo que se intenta con los modelos es que sean más baratos para producir y experimentar que con el código.
+					</p>
+					<br>
 				</div>
 			</div>
 		</div>
@@ -135,22 +166,126 @@
 		<div class="container">
 			<div class="row">
 				<div class="fluid">
-					<strong>LECTURA 3</strong><h3></h3>
-					<br><br>
-					<p></p>
-					<p></p>
-					<p></p>
+					<strong>LECTURA 3</strong><h3>Casos de Uso</h3>
+					
+					<img src="" alt="">
+					<br>
+
+					<p>
+						El Diagrama de Caso de Uso nos da el punto de entrada para analizar los requisitos del sistema, y el problema que necesitamos solucionar. 
+					</p>
+					<br>
+
+					<img src="img/" alt="">
+
+					<p>
+						Un caso de uso se modela para todos los procesos que el sistema debe llevar a cabo. Los procesos se describen dentro de el caso de uso por una descripción textual o una secuencia de pasos ejecutados. Los Diagramas de Actividad se pueden usar también para modelar escenarios ráficamente. Una vez que el comportamiento del sistema está captado de esta manera, los casos de uso se examinan y amplian para mostrar qué objetos se interrelacionan para que ocurra este comportamiento. 
+					</p>
+					<br>
+
+					<p>
+						El modelado de Casos de Uso es la técnica más efectiva y a la vez la más simple para modelar los requisitos del sistema desde la perspectiva del usuario. Los Casos de Uso se utilizan para modelar cómo un sistema o negocio funciona actualmente, o cómo los usuarios desean que funcione. No es realmente una aproximación a la orientación a objetos; es realmente una forma de modelar procesos. Es, sin embargo, una manera muy buena de dirigirse hacia el análisis de sistemas orientado a objetos. Los casos de uso son generalmente el punto de partida del análisis orientado a objetos con UML.
+					</p>
+
+					<p>
+						El modelo de casos de uso consiste en actores y casos de uso. Los actores representan usuarios y otros sistemas que interaccionan con el sistema. Se dibujan como "muñecos" de palo. Actualmente representan el tipo de usuario, no una instancia de usuario. Los casos de uso representan el comportamiento del sistema, los escenarios que el sistema atraviesa en respuesta a un estímulo desde un actor. Se dibujan como elipses.
+					</p>
+					<br>
+
+					<p>
+						Existen diversos diagramas, entre ellos los siguientes:
+					</p>
+					<br>
 
 					<table>
 						<tr>
-							<td></td>
-							<td></td>
+							<td>
+								<h4>Diagrama de Actividades</h4>
+								<p>
+									Los diagramas de actividades se usan para analizar los procesos y, si es necesario, volver a realizar la ingeniería de los procesos.
+								</p>
+							</td>
+
+							<td>
+								<img src="img/Dactividades.jpg" alt="">
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<h4>Diagrama de Clases</h4>	
+								<p>
+									Los diagramas de clases se usan para mostrar las clases de un sistema y las relaciones entre ellas (ﬁgura 1-4). Una sola clase puede mostrarse en más de un diagrama de clases y no es necesario mostrar todas las clases en un solo diagrama monolítico de clases. El mayor valor es mostrar las clases y sus relaciones desde varias perspectivas, de una manera que ayudará a transmitir la comprensión más útil.
+								</p>
+							</td>
+
+							<td>
+								<img src="img/Dclases.jpg" alt="">
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<h4>Diagrama de Secuencia</h4>
+								<p>
+									Un diagrama de secuencia implica un ordenamiento en el tiempo al seguir la secuencia de mensajes desde arriba a la izquierda hasta abajo a la derecha. Debido a que en el diagrama de colaboración no se indica en forma visual un ordenamiento en el tiempo, numeramos los mensajes para indicar el orden en el cual se presentan. Algunas herramientas convertirán de manera automática los diagramas de interacción 
+								</p>
+							</td>
+
+							<td>
+								<img src="img/Dsecuencia" alt="">
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<h4>Diagrama de Colaboración</h4>
+								<p>
+									Los diagramas de colaboración usan las mismas clases y mensajes, pero organizados en una disposición espacial.
+								</p>
+							</td>
+							<td>
+								<img src="Dcolaboracion" alt="">
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<h4>Diagrama de Estado</h4>
+								<p>
+									
+								</p>
+							</td>
+
+							<td>
+								<img src="Destado" alt="">
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<h4>Diagrama de Componentes</h4>
+								<p>
+									
+								</p>
+							</td>
+
+							<td>
+								<img src="Dcomponentes" alt="">
+							</td>
 						</tr>
 					</table>
 					<br>
-					<p></p>
-					<p></p>
-					<p></p>
+
+					<p>
+						Los diagramas de casos de uso parecen muy fáciles; constan de figuras de línea, líneas y óvalos. La figura de palillos se llama actor y representa a alguien o algo que actúa sobre el sistema. En el desarrollo de software, los actores son personas u otro software que actúa sobre el sistema.
+					</p>
+					<br>
+
+					<p>
+						Las líneas son punteadas o continuas, con varias flechas o sin ellas, que indican la relación entre el actor y los óvalos. Estos últimos son los casos de uso y, en el diagrama de casos de uso, los óvalos tienen algún texto que proporciona una descripción básica. 
+					</p>
+					<br>
 				</div>
 			</div>
 		</div>
