@@ -10,372 +10,316 @@
 	<!-- Etiqueta visualización viewport -->
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 
-	<!-- Estilos -->
-	<link rel="stylesheet" type="text/css" href="css/reader.css" media="all" />
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+			font-family:Arial;
+		}
+
+		main{
+			width:100%;
+		}
+
+		#header{
+			top:0;
+			left:0;
+			margin:auto;
+			width:1366px;
+			min-width: 1024px;
+			height:100px;
+			position:fixed;
+			z-index:1000;
+			background-color:rgba(255,255,255,1);
+			-webkit-box-shadow: 3px 10px 13px -6px rgba(0,0,0,0.45);
+			-moz-box-shadow: 3px 10px 13px -6px rgba(0,0,0,0.45);
+			box-shadow: 3px 10px 13px -6px rgba(0,0,0,0.45);
+		}
+
+		.subheader{
+			width:90%;
+			margin:5px auto;
+			border-collapse: separate;
+		}
+
+		.col1{
+			width:300px;
+			text-align: center;
+		}
+
+		.col2{
+			width:90%;
+			margin:auto;
+			padding-left:12px;
+		}
+
+		.logo{
+			width:250px;
+			height:auto;
+			padding:10px;
+		}
+
+		ul, li{
+			text-align:center;
+			list-style: none;
+		}
+
+		.nav li a{
+			color:#000;
+			min-width:150px;
+			display:block;
+			padding:10px 15px;
+			background-color:rgba(255,255,255,1);
+			text-decoration: none;
+		}
+
+		/* usando la pseudoclase hover */
+		.nav li a:hover{
+			background-color:rgba(63,137,201,.3);
+		}
+
+		.nav >li{
+			float:left;
+		}
+
+		.nav li ul{
+			display:none;
+			position:absolute;
+			min-width:150px;
+		}
+
+		.nav li:hover > ul{
+			display:block;
+		}
+
+		.nav li ul li{
+			z-index:1002;
+			position:relative;
+		}
+
+		#presentacion{
+			width:100%;
+			height:70vh;
+			position:relative;
+			background-image:url('img/read.jpg');
+			background-repeat:no-repeat;
+			background-attachment: fixed;
+			background-size:100%;
+			background-origin: content-box;
+			background-position: top center;
+		}
+
+		.row{
+			width:90%;
+			margin:auto;
+		}
+
+		section{
+			width:100%;
+			height:auto;
+			margin-bottom:100px;
+		}
+
+		.table{
+			width:90%;
+			margin:auto;
+		}
+
+		embed{
+			width:1000px;
+			height:0px;
+			visibility: hidden !important;
+		}
+
+		footer{
+			width:100%;
+			height:20%;
+			vertical-align: middle;
+			background-color:rgba(0,0,0,1);
+		}
+
+		.aside{
+			width: 48%;
+			margin:30px auto;
+			border-color:yellow solid 2px;
+			display:inline-block;
+		}
+
+		.aside a{
+			color:rgba(255,255,255,1);
+			text-decoration: none;
+		}
+
+		.block{
+			width:100%;
+			border-spacing: 10px;
+			border-collapse: separate;
+			color:rgba(255,255,255,1);
+		}
+
+		#counter{
+			color:rgba(253,245,0,1);
+			text-align:center;
+			font-size: 38px;
+			font-weight: 700;
+		}
+
+	</style>
 </head>
 <body>
 
-	<div class="header">
-		<div class="container-secondary">
-			<div class="col-3">
-				<a class="link-logo" href="https://www.unad.edu.co/"><img src="img/unad.png" class="logo" alt="UNAD"></a>
-			</div>
+	<main>
+		<div id="header">
+			<table class="subheader">
+				<tr>
+					<td class="col1">
+						<a href="https://www.unad.edu.co/"><img src="img/unad.png" class="logo" alt="Universidad Nacional Abierta y a Distancia"></a>
+					</td>
 
-			<div class="col-7">
-				<nav>
-					<ul>
-						<li><a href="index.html">Inicio</a></li>
-						<li class="submenu"><a href="lecturas.html">Recursos</a>
-							<ul class="children">
-								<li><a href="lecturas.html#lectura1">Evolución del UML</a></li>
-								<li><a href="lecturas.html#lectura2">Herramientas y Usos</a></li>
-								<li><a href="lecturas.html#lectura3">Casos de Uso</a></li>
-								<li><a href="lecturas.html#lectura4">Diagramas de Actividades</a></li>
-								<li><a href="lecturas.html#lectura5">Diagramas de Interacción</a></li>
-							</ul>
-						</li>				
-						<li class="submenu"><a href="multimedia.html">Multimedia</a>
-							<ul class="children">
-								<li><a href="multimedia.html#video1">Casos de Uso</a></li>
-								<li><a href="multimedia.html#video2">Diagrama de Actividades</a></li>
-							</ul>
-						</li>
-						<li class="submenu"><a href="actividades.html">Actividades</a>
-							<ul class="children">
-								<li><a href="actividades.html#tema1">Tema 1</a></li>
-								<li><a href="actividades.html#tema2">Tema 2</a></li>
-								<li><a href="actividades.html#tema3">Tema 3</a></li>
-							</ul>
-						</li>
-						<li><a class="link" href="autor.html">Autor</a></li>
-					</ul>
-				</nav>				
-			</div>				
-		</div>		
-	</div>
-	
-	<section class="presentacion" style="background-image:url(img/read.jpg);"></section>
+					<td class="col2">
+						<ul class="nav">
+							<li><a href="index.html">Inicio</a></li>
+							<li><a href="lecturas.html">Recursos</a>
+								<ul>
+									<li><a href="lecturas.html#lectura1" class="link" onclick="mostrar();">Lectura 1</a></li>
+									<li><a href="lecturas.html#lectura2" class="link" onclick="mostrar();">Lectura 2</a></li>
+									<li><a href="lecturas.html#lectura3" class="link" onclick="mostrar();">Lectura 3</a></li>
+									<li><a href="lecturas.html#lectura4" class="link" onclick="mostrar();">Lectura 4</a></li>
+									<li><a href="lecturas.html#lectura5" class="link" onclick="mostrar();">Lectura 5</a></li>
+								</ul>
+							</li>
+							<li><a href="multimedia.html">Multimedia</a>
+								<ul>
+									<li><a href="multimedia.html#video1">Video 1</a></li>
+									<li><a href="multimedia.html#video2">Video 2</a></li>
+								</ul>
+							</li>
+							<li><a href="actividades.html">Actividades</a>
+								<ul>
+									<li><a href="actividades.html#tema1">Tema 1</a></li>
+									<li><a href="actividades.html#tema2">Tema 2</a></li>
+									<li><a href="actividades.html#tema3">Tema 3</a></li>
+								</ul>
+							</li>
+							<li><a href="autor.html">Autor</a></li>
+						</ul>
+					</td>
+				</tr>
+			</table>
+		</div>
 
-	<section id="lectura1">
-		<div class="container">
-			<div class="row">
-				<div class="fluid">
-					<strong>LECTURA 1</strong><h3>Evolución del UML</h3>
-					<p>
-						El Lenguaje de Modelado Unificado nace con el desarrollo de tecnologías de "tres amigos", que al unirse crean este lenguaje, ellos son:
-						<li>Grady Booch: Precursor de Booch '93.- técnica utilizada en la ingeniería de software.</li>
-						<li>Jim Rumbaught: creador de OMT.- Técnica de modelado de objetos(Object Modeling Technique)</li>
-						<li>Ivan Jacobson, creador de OOSE (Object Oriented Software Engineer). UML Lenguaje Unificado de Modelado</li>
-					</p>
-					<br>
+		<section id="presentacion"></section>
 
-					<table>
+		<section id="lecturas">
+			<div class="container">
+				<div class="row">
+					<table class="table">
 						<tr>
-							<td><img src="img/versiones.jpg" class="lec1"></td>
 							<td>
-								<p>
-									En 1995 fue aprobado el estándar ISO/IEC 19501:2005, conocido como tecnología de la información procesamiento distribuido abierto.
-									<br><br>
-									Se han lanzado varias versiones, la UML 2.0 era un lenguaje gráfico que permite visualizar, especificar, construir y documentar un sistema. A partir de esta se desarrolla la UML 2.4 se divide en dos especificaciones complementarias: Infraestructura y Superestructura.
-									<br><br>
-									El UML permite <q>describir un "plano" del sistema (modelo), incluyendo aspectos conceptuales tales como procesos de negocio, funciones del sistema, y aspectos concretos como expresiones de lenguajes de programación, esquemas de bases de datos y compuestos reciclados.</q><cite>(Cruz y Téllez, s.f., citado por Corral, s.f.)</cite>
-								</p>
+								<h3>Lectura 1. Evolución del UML</h3>
+								<br><br>
+								<embed src="docs/lectura1.pdf">
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<h3>Lectura 2. Modelado de Datos</h3>
+								<br><br>
+								<embed src="docs/lectura1.pdf">
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<h3>Lectura 3. Modelo Entidad-Relación</h3>
+								<br><br>
+								<embed src="docs/lectura1.pdf">
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<h3>Lectura 4. Instalando StarUML</h3>
+								<br><br>
+								<embed src="docs/lectura1.pdf">
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<h3>Lectura 5. Diagramando en StarUML</h3>
+								<br><br>
+								<embed src="docs/lectura1.pdf" width="1200" height="500">
 							</td>
 						</tr>
 					</table>
-
-					<br>						
-
-					<p>
-						La especificación de infraestructura UML define las construcciones lingüísticas fundamentales necesarios para UML 2.4.1. Se complementa con Superestructura UML, que define el nivel de usuario necesario para UML 2.4.1. Las dos especificaciones complementarias constituyen una especificación completa del lenguaje de modelado UML 2. Universidad Tecnológica de Nezahualcóyotl UML 
-					</p>
 				</div>
 			</div>
-			<br><br>
+		</section>
 
-			<div class="fluid">
-				<strong>Referencias Bibliográficas</strong>
-				<br>
-				<p>
-					Corral, N. (s.f.). <cite>Trabajo sobre UML y RUP: Evolución del UML y RUP, Unidad 1.</cite> Instituto Tecnológico de Tijuana. México, D.F. Recuperado de&nbsp;<a href="https://sites.google.com/site/analisiscorraljazmin/unidad-i/1-1-evolucion-del-uml-y-rup" title="trabajo ADSI’ de Iñaki Gabilondo">Evolución del UML y RUP</a>
-				</p>
+		<footer>
+			<div class="container">
+				<div class="row">
+					<div class="aside">
+						<table class="block">
+							<tr>
+								<td colspan="2">
+									<small>Diseño y Creación: <a href="autor.html">Luis Márquez</a> &#174;</small>
+								<td>
+							</tr>
 
-				<strong>Lecturas recomendadas</strong>
-				<a href="https://issuu.com/bri-rodriguez21/docs/revista_electronica">UML</a>
+							<tr>
+								<td>
+									<small>Visitante No.</small>&nbsp;<strong id="counter"></strong>
+
+									<script>
+										var n = localStorage.getItem('on_load_counter');
+										if (n === null){
+											n = 0;
+										}
+										n++;
+
+										localStorage.setItem("on_load_counter", n);
+										document.getElementById('counter').innerHTML = n;
+									</script>
+								</td>
+							</tr>
+
+							<tr>
+								<td>
+									<img src="img/commons.png" alt="license" style="width:100px; height:auto;">
+								</td>
+							</tr>
+						</table>
+					</div>
+
+					<div class="aside">
+						<a class="twitter-timeline"  href="https://twitter.com/search?q=%40LMuml" data-widget-id="848724895798349824">Tweets sobre @LMuml</a>
+						<script>
+							!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+						</script>          
+					</div>	
+				</div>			
 			</div>
-		</div>
-		<br>
-		<div class="fluid"><hr></div>
-	</section>
-
-	<section id="lectura2">
-	<br>
-		<div class="container">
-			<div class="row">
-				<div class="fluid">
-					<strong>LECTURA 2</strong><h3>Herramientas y Usos</h3>
-					<img src="" alt="">
-
-					<br>Herramientas para Modelado</br>
-					<br>
-
-					<img src="img/screenshot.png" class="stuml">
-					<br>
-
-					<p>
-						Para el modelado se trabajará con <a href="http://staruml.io/">StartUML</a>, el cual pasó a licencia abierta, herendando todas las características de la versión comercial y poco a poco ha ido mejorando sus características, entre las cuales se encuentran:
-						<br>
-
-						<li>Soporte completo al diseño UML mediante el uso de diagramas de casos de uso, clase, secuencia, colaboración, estado, actividad, desplieque, componente y de composición estructural (UML 2.0).</li>
-						<li>Definir elementos propios para los diagramas, que no necesariamente pertenezcan al estándar de UML.</li>
-						<li>La capacidad de generar código a partir de los diagramas y viceversa, actualmente funcionando para los lenguajes c++, c# y java.</li>
-						<li>Generar documentación en formatos Word, Excel y PowerPoint sobre los diagramas.</li>
-						<li>Patrones GoF (Gang of Four) , EJB (Enterprise JavaBeans) y personalizados.</li>
-						<li>Plantillas de proyectos.</li>
-						<li>Posibilidad de crear plugins para el programa.</li>
-					</p>
-					<br>
-
-					<p>
-						El Lenguaje Unificado de Modelado, ordena un conjunto de notaciones y diagramas estándar para modelar sistema orientados a objetos, y describe la semántica esencial de lo que estos diagramas y  símbolos significan. 						
-					</p>
-
-					<br>Modelamiento<br>
-
-					<p>
-						Es un conjunto estandarizado de símbolos y de modos de disponerlos para modelar MDA (Model Driven Architecture). La MDA es una nueva tecnología introducida por el OMG. Para obtener ventajas de la MDA, la herramienta de software de modelado debe apoyar muchas variables de personalización. 
-					</p>
-
-					<p>
-						Los diagramas de clases de UML se pueden usar para modelar la base de datos relacional en la que el sistema está basado, sin embargo, los diagramas tradicionales de modelado de datos capturan más información sobre la base de datos relacional y son más adecuados para modelarla.
-					</p>
-					<br>
-
-					<p>
-						Los modelos consisten en diagramas o imágenes. Lo que se intenta con los modelos es que sean más baratos para producir y experimentar que con el código.
-					</p>
-					<br>
-				</div>
-			</div>
-		</div>
-				<br>
-		<div class="fluid"><hr></div>
-	</section>
-
-	<section id="lectura3">
-		<div class="container">
-			<div class="row">
-				<div class="fluid">
-					<strong>LECTURA 3</strong><h3>Casos de Uso</h3>
-					
-					<img src="" alt="">
-					<br>
-
-					<p>
-						El Diagrama de Caso de Uso nos da el punto de entrada para analizar los requisitos del sistema, y el problema que necesitamos solucionar. 
-					</p>
-					<br>
-
-					<img src="img/" alt="">
-
-					<p>
-						Un caso de uso se modela para todos los procesos que el sistema debe llevar a cabo. Los procesos se describen dentro de el caso de uso por una descripción textual o una secuencia de pasos ejecutados. Los Diagramas de Actividad se pueden usar también para modelar escenarios ráficamente. Una vez que el comportamiento del sistema está captado de esta manera, los casos de uso se examinan y amplian para mostrar qué objetos se interrelacionan para que ocurra este comportamiento. 
-					</p>
-					<br>
-
-					<p>
-						El modelado de Casos de Uso es la técnica más efectiva y a la vez la más simple para modelar los requisitos del sistema desde la perspectiva del usuario. Los Casos de Uso se utilizan para modelar cómo un sistema o negocio funciona actualmente, o cómo los usuarios desean que funcione. No es realmente una aproximación a la orientación a objetos; es realmente una forma de modelar procesos. Es, sin embargo, una manera muy buena de dirigirse hacia el análisis de sistemas orientado a objetos. Los casos de uso son generalmente el punto de partida del análisis orientado a objetos con UML.
-					</p>
-
-					<p>
-						El modelo de casos de uso consiste en actores y casos de uso. Los actores representan usuarios y otros sistemas que interaccionan con el sistema. Se dibujan como "muñecos" de palo. Actualmente representan el tipo de usuario, no una instancia de usuario. Los casos de uso representan el comportamiento del sistema, los escenarios que el sistema atraviesa en respuesta a un estímulo desde un actor. Se dibujan como elipses.
-					</p>
-					<br>
-
-					<p>
-						Existen diversos diagramas, entre ellos los siguientes:
-					</p>
-					<br>
-
-					<table>
-						<tr>
-							<td>
-								<h4>Diagrama de Actividades</h4>
-								<p>
-									Los diagramas de actividades se usan para analizar los procesos y, si es necesario, volver a realizar la ingeniería de los procesos.
-								</p>
-							</td>
-
-							<td>
-								<img src="img/Dactividades.jpg" alt="">
-							</td>
-						</tr>
-
-						<tr>
-							<td>
-								<h4>Diagrama de Clases</h4>	
-								<p>
-									Los diagramas de clases se usan para mostrar las clases de un sistema y las relaciones entre ellas (ﬁgura 1-4). Una sola clase puede mostrarse en más de un diagrama de clases y no es necesario mostrar todas las clases en un solo diagrama monolítico de clases. El mayor valor es mostrar las clases y sus relaciones desde varias perspectivas, de una manera que ayudará a transmitir la comprensión más útil.
-								</p>
-							</td>
-
-							<td>
-								<img src="img/Dclases.jpg" alt="">
-							</td>
-						</tr>
-
-						<tr>
-							<td>
-								<h4>Diagrama de Secuencia</h4>
-								<p>
-									Un diagrama de secuencia implica un ordenamiento en el tiempo al seguir la secuencia de mensajes desde arriba a la izquierda hasta abajo a la derecha. Debido a que en el diagrama de colaboración no se indica en forma visual un ordenamiento en el tiempo, numeramos los mensajes para indicar el orden en el cual se presentan. Algunas herramientas convertirán de manera automática los diagramas de interacción 
-								</p>
-							</td>
-
-							<td>
-								<img src="img/Dsecuencia" alt="">
-							</td>
-						</tr>
-
-						<tr>
-							<td>
-								<h4>Diagrama de Colaboración</h4>
-								<p>
-									Los diagramas de colaboración usan las mismas clases y mensajes, pero organizados en una disposición espacial.
-								</p>
-							</td>
-							<td>
-								<img src="Dcolaboracion" alt="">
-							</td>
-						</tr>
-
-						<tr>
-							<td>
-								<h4>Diagrama de Estado</h4>
-								<p>
-									
-								</p>
-							</td>
-
-							<td>
-								<img src="Destado" alt="">
-							</td>
-						</tr>
-
-						<tr>
-							<td>
-								<h4>Diagrama de Componentes</h4>
-								<p>
-									
-								</p>
-							</td>
-
-							<td>
-								<img src="Dcomponentes" alt="">
-							</td>
-						</tr>
-					</table>
-					<br>
-
-					<p>
-						Los diagramas de casos de uso parecen muy fáciles; constan de figuras de línea, líneas y óvalos. La figura de palillos se llama actor y representa a alguien o algo que actúa sobre el sistema. En el desarrollo de software, los actores son personas u otro software que actúa sobre el sistema.
-					</p>
-					<br>
-
-					<p>
-						Las líneas son punteadas o continuas, con varias flechas o sin ellas, que indican la relación entre el actor y los óvalos. Estos últimos son los casos de uso y, en el diagrama de casos de uso, los óvalos tienen algún texto que proporciona una descripción básica. 
-					</p>
-					<br>
-				</div>
-			</div>
-		</div>
-				<br>
-		<div class="fluid"><hr></div>
-	</section>
-
-	<section id="lectura4">
-		<div class="container">
-			<div class="row">
-				<div class="fluid">
-					<strong>LECTURA 4</strong><h3></h3>
-					<br><br>
-					<p></p>
-					<p></p>
-					<p></p>
-
-					<table>
-						<tr>
-							<td></td>
-							<td></td>
-						</tr>
-					</table>
-					<br>
-					<p></p>
-					<p></p>
-					<p></p>
-				</div>
-			</div>
-		</div>
-				<br>
-		<div class="fluid"><hr></div>
-	</section>
-
-	<section id="lectura5">
-		<div class="container">
-			<div class="row">
-				<div class="fluid">
-					<strong>LECTURA 5</strong><h3></h3>
-					<br><br>
-					<p></p>
-					<p></p>
-					<p></p>
-
-					<table>
-						<tr>
-							<td></td>
-							<td></td>
-						</tr>
-					</table>
-					<br>
-					<p></p>
-					<p></p>
-					<p></p>
-				</div>
-			</div>
-		</div>
-		<br>
-		<div class="fluid"><hr></div>
-		<br>
-		<br>
-		<br>
-	</section>
-
-	
-	<!-- Pie de Página, datos del autor -->
-	<footer>
-		<div class="container">
-		<br>
-			<div class="row">
-				<div class="bloque">
-					<table>
-						<tr><td colspan="2"><small>Diseño y Creación: <a href="autor.html">Luis Márquez</a> &#174;</small><td></tr>
-						<tr>
-							<td><td><small>Visitante No.</small></td>
-							<td class="contador"><iframe src="php/contador.php" frameborder="0" width="130px" height="60px" scrolling="no"></iframe></td></tr>
-						</td></tr>
-						<tr><td colspan="2"><img src="img/commons.png" alt="license" class="licencia"></td></tr>
-					</table>					
-				</div>
-
-				<div class="bloque">
-				    <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/hashtag/LMuml" data-widget-id="845827507286917120">Tweets sobre #LMuml</a>
-				    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>          
-				</div>
-			</div>			
-		</div>
-	</footer>
+		</footer>
+	</main>
 
 	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript">
+	
+		opciones = document.(".link").onclick();
+			for(i=0; i<opciones.length; i++){
+				if(opciones[i].)
+			}
+
+			function mostrar(){
+				
+
+				document.getElementById("embed").style.visibility = "visible";
+				document.getElementById("embed").style.height = "500px";
+			}			
+	</script>		
 	
 </body>
 </html>
