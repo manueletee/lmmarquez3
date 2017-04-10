@@ -11,11 +11,13 @@
 	<!-- Etiqueta visualización viewport -->
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 
+	<!-- Estilos -->
 	<style type="text/css">
 		*{
 			margin:0;
 			padding:0;
 			font-family:Arial;
+			overflow-x:hidden;
 		}
 
 		main{
@@ -161,7 +163,8 @@
 		#tematica{
 			width:100%;
 			padding:20px;
-			background-color:rgba(235,235,235,1);
+			vertical-align: center;
+			background-color:rgba(255,255,255,1);
 		}
 
 		.row h1{
@@ -169,25 +172,107 @@
 			margin:auto;
 			font-size:42px;
 			text-align: center;
-			color:rgba(100,20,100,1);
+			color:rgba(255,255,255,1);
+			background-color:rgba(51,51,51,1);
 		}
 
-		.items{
+		.fila{
 			width:100%;
-			border-collapse:separate;
-			border-spacing:10px;
+			margin:auto 100px;
+			display:inline-flex;
 		}
 
-		.items td{
-			height:150px;
-			border-bottom-style: solid;
-			border-bottom-color:rgba(200,200,200,1);
+		figure:nth-child(1){
+			padding:0;
 		}
 
-		.img1{
-			width:250px;
-			height:auto;
-			margin:auto;
+		figure{
+			padding-left:25px;
+		}
+
+		#titulo1{
+			width:364px;
+			height:50px;
+			overflow:hidden;
+			vertical-align: middle;
+			background-color:rgba(165,70,134,1);
+		}
+
+		#titulo1>h3{
+			padding:15px;
+			text-align: center;
+			color:rgba(255,255,255,1);
+			text-shadow: rgb(46, 46, 46) 0px 4px 5px;
+		}
+
+		#titulo2{
+			width:364px;
+			height:50px;
+			overflow:hidden;
+			vertical-align: middle;
+			background-color:rgba(244,121,32,1);
+		}
+
+		#titulo2>h3{
+			padding:15px;
+			text-align: center;
+			color:rgba(255,255,255,1);
+			text-shadow: rgb(46, 46, 46) 0px 4px 5px;
+		}
+
+		#titulo3{
+			width:364px;
+			height:50px;
+			overflow:hidden;
+			text-align:center;
+			background-color:rgba(80,183,72,1);
+		}
+
+		#titulo3>h3{
+			padding:15px;
+			text-align: center;
+			color:rgba(255,255,255,1);
+			text-shadow: rgb(46, 46, 46) 0px 4px 5px;
+		}
+
+		#titulo4{
+			width:364px;
+			height:50px;
+			overflow:hidden;
+			vertical-align: middle;
+			background-color:rgba(240,180,41,1);
+		}
+
+		#titulo4>h3{
+			padding:15px;
+			text-align: center;
+			color:rgba(255,255,255,1);
+			text-shadow: rgb(46, 46, 46) 0px 4px 5px;
+		}
+
+		#titulo5{
+			width:364px;
+			height:50px;
+			overflow:hidden;
+			vertical-align: middle;
+			background-color:rgba(67,99,244,1);
+		}
+
+		#titulo5>h3{
+			padding:15px;
+			text-align: center;
+			color:rgba(255,255,255,1);
+			text-shadow: rgb(46, 46, 46) 0px 4px 5px;
+		}
+
+		figcaption{
+			width:364px;
+			text-align:center;
+			word-wrap: normal;
+			background-color:rgba(179,179,179,.3);
+		}
+
+		figcaption>p{
 			padding:10px;
 		}
 
@@ -216,8 +301,8 @@
 		}
 
 		.contacto{
-			color:rgba(235,235,200,1);
-			background-color:transparent;
+			color:rgba(0,102,128,1) !important;
+			background-color:transparent !important;
 		}
 
 		footer{
@@ -253,10 +338,22 @@
 			font-weight: 700;
 		}
 	</style>
+
+	<script type="text/javascript">
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-97135052-1', 'auto');
+	  ga('send', 'pageview');
+	  ga('set', 'userId', {{USER_ID}}); // Establezca el ID de usuario mediante el user_id con el que haya iniciado sesión.
+	</script>
 <body>
 
+	<!-- Contenedor principal -->
 	<main>
-		<div id="header">
+		<div id="header"> <!-- Contenedor del menú -->
 			<table class="subheader">
 				<tr>
 					<td class="col1">
@@ -265,7 +362,7 @@
 
 					<td class="col2">
 						<ul class="nav">
-							<li><a href="#">Inicio</a></li>
+							<li><a href="index.html">Inicio</a></li>
 							<li><a href="lecturas.html">Recursos</a>
 								<ul>
 									<li><a href="lecturas.html#lectura1">Lectura 1</a></li>
@@ -295,8 +392,10 @@
 			</table>
 		</div>
 
+		<!-- Banner inicial -->
 		<section id="inicio"></section>
 
+		<!-- Sección que contiene la información general del curso -->
 		<section id="info">
 			<div class="container">
 				<div class="row" style="padding-top:40px; padding-bottom:40px;">
@@ -382,84 +481,55 @@
 			</div>
 		</section>
 
+		<!-- Sección que contiene la descripción de los temas del curso -->
 		<section id="tematica">
 			<div class="container">
 				<div class="row">
 					<h1>Temática del Curso</h1>
+					<br>
+				</div>
+				
+				<br>
+
+				<div class="fila" id="contenedor">
+					<figure>
+						<div id="titulo1"><h3>Tema 01. ¿Qué es UML?</h3></div>
+						<img src="img/whiteboard-849812_640.jpg" alt="diagramando" width="364" height="288">
+						<figcaption><p>Conceptos, características y tipos de diagramas en el Lenguaje Unificado de Modelado (UML).</p></figcaption>
+					</figure>
+
+					<figure>
+						<div id="titulo2"><h3>Tema 02. Modelo Entidad-Relación</h3></div>
+						<img src="img/ux-788002_640.jpg" alt="diagramando" width="364" height="288">
+						<figcaption><p>Concepto, características y componentes del modelo ER, reglas de modelado.</p></figcaption>
+					</figure>
+
+					<figure>
+						<div id="titulo3"><h3>Tema 03. Diagrama de Clases</h3></div>
+						<img src="img/technology-1095751_640.jpg" alt="diagramando" width="364" height="288">
+						<figcaption><p>Componentes del diagrama de clases, conceptos.</p></figcaption>
+					</figure>
 				</div>
 
-				<div class="row">
-					<table class="items">
-						<tr>
-							<td>
-								<img src="img/casos.png" class="img1">
-							</td>
+				<br><br><br>
 
-							<td>
-								<h4>Tema 1. Qué es UML</h4>
-								<br><br>
-								<p>
-									Concepto, evolución y tipos de diagramas utilizados en UML.  
-								</p>
-							</td>
-						</tr>	
+				<div class="fila" id="contenedor">
+					<figure>
+						<div id="titulo4"><h3>Tema 04. Diseño Lógico de Datos</h3></div>
+						<img src="img/whiteboard-849803_640.jpg" alt="diagramando" width="364" height="288">
+						<figcaption><p>Conociendo el modelo lógico, cómo se llega a este modelo y qué tipos de modelado existen.</p></figcaption>
+					</figure>
 
-						<tr>
-							<td>
-								<img src="img/diagramaclases.jpg" class="img1">
-							</td>
-
-							<td>
-								<h4>Tema 2. Diagrama de Clases</h4>
-								<p>
-									Concepto, elementos para el diagrama y ejemplo. 
-								</p>
-							</td>
-						</tr>
-
-						<tr>
-							<td>
-								<img src="img/diagramaER.png" class="img1">
-							</td>
-
-							<td>
-								<h4>Tema 3. Modelo Entidad-Relación</h4>
-								<p>
-									Concepto, entidades y relaciones, elementos para su esquematización. 
-								</p>
-							</td>
-						</tr>
-
-						<tr>
-							<td>
-								<img src="img/staruml2.png" class="img1">
-							</td>
-
-							<td>
-								<h4>Tema 4. Diseño Lógico de Datos en el Modelo Entidad-Relación</h4>
-								<p>
-									Objetivos, concepto, beneficios, elementos y reglas para su esquematización. 
-								</p>
-							</td>
-						</tr>
-
-						<tr>
-							<td>
-								<img src="img/starUML.png" class="img1">
-							</td>
-
-							<td>
-								<h4>Tema 5. Diseño Lógico de Datos en el Modelo Entidad-Relación</h4>
-								<p>
-									Diagramación del diseño lógico de datos en el modelo E-R, usando StarUML.
-								</p>
-							</td>
-						</tr>
-					</table>
+					<figure>
+						<div id="titulo5"><h3>Tema 05. Modelando con StarUML</h3></div>
+						<img src="img/screenshot.png" alt="diagramando" width="364" height="288">
+						<figcaption><p>Conocimiento del programa, pasar del modelo ER al modelo relacional en UML.</p></figcaption>
+					</figure>
 				</div>
 			</div>
 		</section>
 
+		<!-- Sección que contiene la información de contacto de la entidad -->
 		<section id="informes">
 			<div class="container">
 				<div class="row">
@@ -500,6 +570,7 @@
 			</div>
 		</section>
 
+		<!-- Pie de página -->
 		<footer>
 			<div class="container">
 				<div class="row">
