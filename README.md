@@ -8,7 +8,7 @@ Descripción de la Actividad: Etapa de Diseño OVI
 
 Tema seleccionado: Modelado de Datos con UML. 
 
-Reursos Utilizados:
+Recursos Utilizados:
 Imágenes: Pixabay.com, UNAD
 Colores: Manual de Identidad Institucional de la UNAD
 Referencias: Anunciadas en los documentos de lectura.
