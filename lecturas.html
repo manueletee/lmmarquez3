@@ -169,6 +169,22 @@
 		}
 
 	</style>
+
+	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript">
+		window.onload = cambiar();
+
+		function cambiar(esto){
+			vista=document.getElementById(esto).style.display;
+			if (vista=='none'){
+				vista='block';
+			}else{
+				vista='none';
+			}
+
+			document.getElementById(esto).style.display = vista;
+		}
+	</script>
 </head>
 <body>
 
@@ -262,20 +278,6 @@
 		</footer>
 	</main>
 
-	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
-
-	<script type="text/javascript">
-		function cambiar(esto){
-			vista=document.getElementById(esto).style.display;
-			if (vista=='none'){
-				vista='block';
-			}else{
-				vista='none';
-			}
-
-			document.getElementById(esto).style.display = vista;
-		}
-	</script>
 
 </body>
 </html>
