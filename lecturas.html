@@ -123,9 +123,10 @@
 			width:100%;
 			margin:auto;
 			overflow:auto;
+			display:inline-flex;
 		}
 
-		.fila{
+		embed{
 		    left: 50%;
 		    top: 50%;
 		    margin-top:400px;
@@ -133,17 +134,6 @@
 		    transform: translate(-50%, -50%);
 		    -webkit-transform: translate(-50%, -50%);
 		}
-
-		#lectura1:before{z-index:1;}
-
-		#lectura2:before{z-index:2;}
-
-		#lectura3:before{z-index:3;}
-
-		#lectura4:before{z-index:4;}
-
-		#lectura5:before{z-index:5;}
-
 
 		footer{
 			width:100%;
@@ -183,7 +173,7 @@
 <body>
 
 	<main>
-		<div id="header">
+		<div id="header"> <!-- Contenedor del menú -->
 			<table class="subheader">
 				<tr>
 					<td class="col1">
@@ -195,11 +185,11 @@
 							<li><a href="index.html">Inicio</a></li>
 							<li><a href="lecturas.html">Recursos</a>
 								<ul>
-									<li><a href="lecturas.html#lectura1">Lectura 1</a></li>
-									<li><a href="lecturas.html#lectura2">Lectura 2</a></li>
-									<li><a href="lecturas.html#lectura3">Lectura 3</a></li>
-									<li><a href="lecturas.html#lectura4">Lectura 4</a></li>
-									<li><a href="lecturas.html#lectura5">Lectura 5</a></li>
+									<li><a href="#lectura1" class="button">Lectura 1</a></li>
+									<li><a href="#lectura2" class="button">Lectura 2</a></li>
+									<li><a href="#lectura3" class="button">Lectura 3</a></li>
+									<li><a href="#lectura4" class="button">Lectura 4</a></li>
+									<li><a href="#lectura5" class="button">Lectura 5</a></li>
 								</ul>
 							</li>
 							<li><a href="multimedia.html">Multimedia</a>
@@ -227,23 +217,11 @@
 		<section id="lecturas">
 			<div class="contenedor">
 				<div class="fila">
-					<embed src="docs/Lectura1.pdf" id="lectura1" width="900" height="500">
-				</div>
-
-				<div class="fila">
-					<embed src="docs/Lectura2.pdf" id="lectura2" width="900" height="500">
-				</div>
-
-				<div class="fila">
-					<embed src="docs/Lectura3.pdf" id="lectura3" width="900" height="500">
-				</div>
-
-				<div class="fila">
-					<embed src="docs/Lectura4.pdf" id="lectura4" width="900" height="500">
-				</div>
-
-				<div class="fila">
-					<embed src="docs/Lectura5.pdf" id="lectura5" width="900" height="500">
+					<embed src="docs/Lectura1.pdf" width="900" height="500" id="lectura" visible>
+					<embed src="docs/Lectura2.pdf" width="900" height="500" id="lectura" hidden>
+					<embed src="docs/Lectura3.pdf" width="900" height="500" id="lectura" hidden>
+					<embed src="docs/Lectura4.pdf" width="900" height="500" id="lectura" hidden>
+					<embed src="docs/Lectura5.pdf" width="900" height="500" id="lectura" hidden>
 				</div>
 			</div>				
 		</section>
@@ -285,6 +263,16 @@
 	</main>
 
 	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
-	
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var opciones = $('.button').onclick();
+
+			for(i=0; i<=opciones; i++){
+				$('lectura').visible();
+			}
+	    });		
+	</script>
+
 </body>
 </html>
