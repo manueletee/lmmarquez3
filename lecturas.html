@@ -185,11 +185,11 @@
 							<li><a href="index.html">Inicio</a></li>
 							<li><a href="lecturas.html">Recursos</a>
 								<ul>
-									<li><a href="#lectura1" class="button">Lectura 1</a></li>
-									<li><a href="#lectura2" class="button">Lectura 2</a></li>
-									<li><a href="#lectura3" class="button">Lectura 3</a></li>
-									<li><a href="#lectura4" class="button">Lectura 4</a></li>
-									<li><a href="#lectura5" class="button">Lectura 5</a></li>
+									<li><a href="#lectura1" onclick="cambiar('ejemplo'); return false;">Lectura 1</a></li>
+									<li><a href="#lectura2" onclick="cambiar('ejemplo2'); return false;">Lectura 2</a></li>
+									<li><a href="#lectura3" onclick="cambiar('ejemplo3'); return false;">Lectura 3</a></li>
+									<li><a href="#lectura4" onclick="cambiar('ejemplo4'); return false;">Lectura 4</a></li>
+									<li><a href="#lectura5" onclick="cambiar('ejemplo5'); return false;">Lectura 5</a></li>
 								</ul>
 							</li>
 							<li><a href="multimedia.html">Multimedia</a>
@@ -217,11 +217,11 @@
 		<section id="lecturas">
 			<div class="contenedor">
 				<div class="fila">
-					<embed src="docs/Lectura1.pdf" width="900" height="500" id="lectura" visible>
-					<embed src="docs/Lectura2.pdf" width="900" height="500" id="lectura" hidden>
-					<embed src="docs/Lectura3.pdf" width="900" height="500" id="lectura" hidden>
-					<embed src="docs/Lectura4.pdf" width="900" height="500" id="lectura" hidden>
-					<embed src="docs/Lectura5.pdf" width="900" height="500" id="lectura" hidden>
+					<embed src="docs/Lectura1.pdf" width="900" height="500" id="ejemplo" style="display: none;"">
+					<embed src="docs/Lectura2.pdf" width="900" height="500" id="ejemplo2" style="display: none;"">
+					<embed src="docs/Lectura3.pdf" width="900" height="500" id="ejemplo3" style="display: none;"">
+					<embed src="docs/Lectura4.pdf" width="900" height="500" id="ejemplo4" style="display: none;"">
+					<embed src="docs/Lectura5.pdf" width="900" height="500" id="ejemplo5" style="display: none;"">
 				</div>
 			</div>				
 		</section>
@@ -265,13 +265,16 @@
 	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
 
 	<script type="text/javascript">
-		$(document).ready(function(){
-			var opciones = $('.button').onclick();
-
-			for(i=0; i<=opciones; i++){
-				$('lectura').visible();
+		function cambiar(esto){
+			vista=document.getElementById(esto).style.display;
+			if (vista=='none'){
+				vista='block';
+			}else{
+				vista='none';
 			}
-	    });		
+
+			document.getElementById(esto).style.display = vista;
+		}
 	</script>
 
 </body>
