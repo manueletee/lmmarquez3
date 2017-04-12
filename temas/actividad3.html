@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		*{
+			font-family:Arial;
+		}
+
+		body{
+			overflow:hidden;
+		}
+
+		section{
+			width:90%;
+			height: auto;
+			margin:auto;
+			font-size:12px;
+		}
+		
+		.table{
+			width:100%;			
+			border-spacing:10px;
+			border-collapse:separate;
+		}
+
+		input[type="radio"]{
+			font-size:13px; 
+			text-align:justify;
+			line-height: 1.5em;
+		}
+
+		div#contenedor{
+			width: 35em;
+			overflow: hidden;
+			margin: 0 auto;
+			background-color: #000000;
+			padding: 0.5em;
+			color: #FFF;
+		}
+
+	</style>
+
+	<script>
+		var respuestaCorrecta = new Array("a2", "b1", "c3", "d2", "e1", "f4");
+		
+		function comprobarRadio(matriz){
+			var numeroRespuestasOK=0;
+			var numeroRespuestasKO=0;
+			var solucion = document.getElementById("solucion");
+			var tablaResultados ="<table border='1'>";
+			
+			for(j=0; j< matriz.length; j++){
+			var radios = document.getElementsByName(j+1);
+				for(i=0; i< radios.length;i++){
+					if (radios[i].checked){
+					var valor =  radios[i].value;
+						if(valor == matriz[j]) {
+						tablaResultados+= "<tr><td>Respuesta correcta: </td>"+ "<td>"+ valor + "</td></tr>";
+						numeroRespuestasOK++;
+						break;
+						}else {
+						tablaResultados+= "<tr><td>Respuesta incorrecta: </td><td>"+ valor + "</td></tr>";
+						numeroRespuestasKO++;
+						break;
+						}
+					}
+				}
+			}
+
+			var numeroRespuestasNulas=matriz.length - (numeroRespuestasOK + numeroRespuestasKO);
+			tablaResultados+="<tr><td>Resultado: </td><td>Respuestas correctas: "+numeroRespuestasOK+"<br/>Respuestas incorrectas: "+ numeroRespuestasKO+"<br/>Respuestas en blanco: "+ numeroRespuestasNulas+"</td></tr></table>";
+			solucion.innerHTML = tablaResultados;
+	}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
+
+		<section id="tema3">
+			<div class="container">
+				<div class="row">
+				<br>
+					<table class="table">
+						<thead colspan="2">
+							<th style="width:70%; background-color:rgba(80,183,72,1);"><h2>Tema 3</h2></th>
+							<th style="width:30%; background-color:rgba(80,183,72,.3);"><h4>Actividad 1</h4></th>
+						</thead>
+
+						<tr>
+							<td >
+								<form action="">
+									<table>
+										<tr>
+											<td>
+										
+											</td>
+										</tr>
+									</table>				
+								</form>
+							</td>
+						</tr>
+					</table>					
+					<br><br>					
+				</div>
+			</div>
+		</section>
+	
+</body>
+</html>

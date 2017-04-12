@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+
+	<style type="text/css">
+		*{
+			font-family:Arial;		
+		}
+
+		body{
+			width:100%;
+			height:100vh;
+			overflow:hidden;
+		}
+
+		section{
+			width:90%;
+			margin:auto;
+			font-size:12px;
+		}
+		
+		table{
+			width:100%;
+			
+			border-spacing:10px;
+			border-collapse:separate;
+		}
+
+		input[type="radio"]{
+			font-size:13px; 
+			text-align:justify;
+			line-height: 1.5em;
+		}
+
+		div#contenedor{
+			width: 35em;
+			overflow: hidden;
+			margin: 0 auto;
+			background-color: #000000;
+			padding: 0.5em;
+			color: #FFF;
+		}
+
+	</style>
+
+	<script>
+		var respuestaCorrecta = new Array("a2", "b1", "c3", "d2", "e1", "f4");
+		
+		function comprobarRadio(matriz){
+			var numeroRespuestasOK=0;
+			var numeroRespuestasKO=0;
+			var solucion = document.getElementById("solucion");
+			var tablaResultados ="<table border='1'>";
+			
+			for(j=0; j< matriz.length; j++){
+			var radios = document.getElementsByName(j+1);
+				for(i=0; i< radios.length;i++){
+					if (radios[i].checked){
+					var valor =  radios[i].value;
+						if(valor == matriz[j]) {
+						tablaResultados+= "<tr><td>Respuesta correcta: </td>"+ "<td>"+ valor + "</td></tr>";
+						numeroRespuestasOK++;
+						break;
+						}else {
+						tablaResultados+= "<tr><td>Respuesta incorrecta: </td><td>"+ valor + "</td></tr>";
+						numeroRespuestasKO++;
+						break;
+						}
+					}
+				}
+			}
+
+			var numeroRespuestasNulas=matriz.length - (numeroRespuestasOK + numeroRespuestasKO);
+			tablaResultados+="<tr><td>Resultado: </td><td>Respuestas correctas: "+numeroRespuestasOK+"<br/>Respuestas incorrectas: "+ numeroRespuestasKO+"<br/>Respuestas en blanco: "+ numeroRespuestasNulas+"</td></tr></table>";
+			solucion.innerHTML = tablaResultados;
+	}
+	</script>
+
+</head>
+<body>
+	
+		<section>
+			<div class="container">
+				<div class="row">
+				<br><br>
+					<table>
+						<thead>
+							<th colspan="2" style="width:70%; background-color:rgba(165,70,134,1);"><h2>Tema 1</h2></th>
+							<th style="width:30%; background-color:rgba(165,70,134,.3);"><h4>Actividad 1</h4></th>
+						</thead>
+
+						<tr>
+							<td>
+								<label for="p1">1. ¿Qué significa el acrónimo UML?</label><br><br>
+								a. Uniform Model Language <br>
+								b. Unified Modeling Language <br>
+								c. Unitaria Molding Language <br>
+								d. Unified Molding Language <br>								
+
+								<br>
+								<label for="p2">2. El UML sólo se usa para modelar software</label><br><br>
+								a. Verdadero <br>
+								b. Falso <br>
+								
+								<br>
+								<label for="p3">3. Los diagramas utilizados en el UML son:</label><br><br>
+								a. Clase, frecuencia, caso de uso, apoyo, componente, estado y actividades <br>
+								b. Interacción, clase, caso de uso, componente y actividades <br>
+								c. Clase, casos de uso, actividades, secuencia, colaboración, estado y componentes <br>
+								d. Casos de uso, actividades, componentes y estado <br>			
+							</td>
+
+							<td>
+								<label for="p4">4. Un diagrama de clases es una visión dinámica de las clases de un sistema</label><br><br>
+								a. Verdadero <br>
+								b. Falso <br>
+
+								<br>
+								<label for="p5">5. El diagrama de estado muestra el estado cambiante de un solo objeto conforme va pasando por el sistema.</label><br><br>
+								a. Verdadero <br>
+								b. Falso <br>
+
+								<br>
+								<label for="p6">6. ¿Cuál es el apodo del grupo de científicos más notablemente asociados con el UML?</label><br><br>
+								a. La pandilla de los cuatro <br>
+								b. Los tres mosqueteros <br>
+								c. El dúo dinámico <br>
+								d. Los tres amigos <br>
+							</td>
+
+							<td>
+								<h1>Opciones de Respuesta:</h1>
+								<table style="float:left; border:1px; border-style:solid; border-color:gray">
+									<tr>
+										<td style="font-weight: 700;">1.</td>
+										<td>a&nbsp;<input type="radio" value="a1" name="1" /></td>
+										<td>b&nbsp;<input type="radio" value="a2" name="1"/></td>
+										<td>c&nbsp;<input type="radio" value="a3" name="1" /></td>
+										<td>d&nbsp;<input type="radio" value="a4" name="1" /></td>
+								 	</tr> 
+								 	
+								 	<tr>
+								 		<td style="font-weight: 700;">2.</td>
+										<td>a&nbsp;<input type="radio" value="b1" name="2" /></td>
+										<td>b&nbsp;<input type="radio" value="b2" name="2"/></td>
+										<td hidden>B3<input type="radio" value="b3" name="2" /></td>
+										<td hidden>B4<input type="radio" value="b4" name="2" /></td>
+								 	</tr> 
+								 	
+								 	<tr>
+								 		<td style="font-weight: 700;">3.</td>
+										<td>a&nbsp;<input type="radio" value="c1" name="3" /></td>
+										<td>b&nbsp;<input type="radio" value="c2" name="3"/></td>
+										<td>c&nbsp;<input type="radio" value="c3" name="3" /></td>
+										<td>d&nbsp;<input type="radio" value="c4" name="3" /></td>
+								 	</tr> 
+								 	
+								 	<tr>
+								 		<td style="font-weight: 700;">4.</td>
+										<td>a&nbsp;<input type="radio" value="d1" name="4" /></td>
+										<td>b&nbsp;<input type="radio" value="d2" name="4"/></td>
+										<td hidden>D3<input type="radio" value="d3" name="4" /></td>
+										<td hidden>D4<input type="radio" value="d4" name="4" /></td>
+								 	</tr> 
+								 	
+								 	<tr>
+								 		<td style="font-weight: 700;">5.</td>
+										<td>a&nbsp;<input type="radio" value="e1" name="5" /></td>
+										<td>b&nbsp;<input type="radio" value="e2" name="5"/></td>
+										<td>c&nbsp;<input type="radio" value="e3" name="5" /></td>
+										<td>d&nbsp;<input type="radio" value="e4" name="5" /></td>
+								 	</tr>
+
+								 	<tr>
+								 		<td style="font-weight: 700;">6.</td>
+										<td>a&nbsp;<input type="radio" value="f1" name="6" /></td>
+										<td>b&nbsp;<input type="radio" value="f2" name="6"/></td>
+										<td>c&nbsp;<input type="radio" value="f3" name="6" /></td>
+										<td>d&nbsp;<input type="radio" value="f4" name="6" /></td>
+								 	</tr>
+
+								 	<tr>
+								 		<td colspan="2">
+								 			<input type="button" value="Corregir" onclick="comprobarRadio(respuestaCorrecta)"/>
+								 		</td>
+								 	</tr>
+								</table>
+								
+									<div id="solucion"></div>
+								</div>
+							</td>
+						</tr>
+					</table>				
+				</div>
+			</div>
+		</section>
+
+</body>
+</html>
