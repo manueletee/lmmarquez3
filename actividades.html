@@ -119,14 +119,27 @@
 			margin:auto;
 		}
 
-		table{
-			width:100%;
-			border-spacing:5px;
-			border-collapse:separate;
+		.horizontal {
+		    display: block;
+		    width: 100%;
+		    height: 100%;
+		    overflow: hidden;
+		    position: static;
 		}
 
-		label, input[type="radio"]{
-			line-height: 2em;
+		.table{
+		    display: table;
+		    table-layout: fixed;
+		    width: 100%;
+		    height: 100%;
+		}
+
+		.table > .section {
+		    width: 100%;
+		    height: 100vh;
+		    display: table-cell;
+		    vertical-align: middle;
+		    text-align: center;
 		}
 
 		footer{
@@ -162,6 +175,20 @@
 			font-weight: 700;
 		}
 	</style>
+
+	<script>
+		$(window).load(function() {
+		    var vWidth = $(window).width();
+		    var vHeight = $(window).height();
+		    $('.table > iframe').css('width', vWidth).css('height', vHeight);
+		});
+
+		$(window).resize(function() {
+		    var vWidth = $(window).width();
+		    var vHeight = $(window).height();
+		    $('.table > iframe').css('width', vWidth).css('height', vHeight);
+		});
+	</script>
 <body>
 
 	<main>
@@ -190,11 +217,13 @@
 									<li><a href="multimedia.html#video2">Video 2</a></li>
 								</ul>
 							</li>
-							<li><a href="actividades.html">Actividades</a>
+							<li><a href="#actividades">Actividades</a>
 								<ul>
 									<li><a href="#tema1" id="tema1">Tema 1</a></li>
 									<li><a href="#tema2" id="tema2">Tema 2</a></li>
 									<li><a href="#tema3" id="tema3">Tema 3</a></li>
+									<li><a href="#tema4" id="tema4">Tema 4</a></li>
+									<li><a href="#tema5" id="tema5">Tema 5</a></li>
 								</ul>
 							</li>
 							<li><a href="autor.html">Autor</a></li>
@@ -206,227 +235,12 @@
 
 		<section id="activity"></section>
 
-		<section>
-			<div class="container" id="tema1">
-				<div class="row">
-				<br><br>
-					<table>
-						<thead>
-							<th colspan="2" style="width:70%; background-color:rgba(165,70,134,1);"><h2>Tema 1</h2></th>
-							<th style="width:30%; background-color:rgba(165,70,134,.3);"><h4>Actividad 1</h4></th>
-						</thead>
-
-						<tr>
-							<td>
-								<label for="p1">1. ¿Qué significa el acrónimo UML?</label><br>
-								a. Uniform Model Language <br>
-								b. Unified Modeling Language <br>
-								c. Unitaria Molding Language <br>
-								d. Unified Molding Language <br>								
-
-								<br>
-								<label for="p2">2. El UML sólo se usa para modelar software</label><br>
-								a. Verdadero <br>
-								b. Falso <br>
-							</td>
-
-							<td>
-								<label for="p3">3. Un diagrama de clases es una visión dinámica de las clases de un sistema</label><br>
-								a. Verdadero <br>
-								b. Falso <br>
-
-								<br>
-								<label for="p1">4. ¿Cuál es el apode del grupo de científicos más notablemente asociados con el UML?</label><br>
-								a. La pandilla de los cuatro <br>
-								b. Los tres mosqueteros <br>
-								c. El dúo dinámico <br>
-								d. Los tres amigos <br>
-							</td>
-
-							<td>
-								<h1>Opciones de Respuesta:</h1>
-								<table style="float:left; border: 1px solid white; margin-right:.5em;">
-								 <tr>
-										<td>A1<input type="radio" value="a1" name="1" /></td>
-										<td>A2<input type="radio" value="a2" name="1"/></td>
-										<td>A3<input type="radio" value="a3" name="1" /></td>
-										<td>A4<input type="radio" value="a4" name="1" /></td>
-								 </tr> 
-								 <tr>
-										<td>B1<input type="radio" value="b1" name="2" /></td>
-										<td>B2<input type="radio" value="b2" name="2"/></td>
-										<td>B3<input type="radio" value="b3" name="2" /></td>
-										<td>B4<input type="radio" value="b4" name="2" /></td>
-								 </tr> 
-								 <tr>
-										<td>C1<input type="radio" value="c1" name="3" /></td>
-										<td>C2<input type="radio" value="c2" name="3"/></td>
-										<td>C3<input type="radio" value="c3" name="3" /></td>
-										<td>C4<input type="radio" value="c4" name="3" /></td>
-								 </tr> 
-								 <tr>
-										<td>D1<input type="radio" value="d1" name="4" /></td>
-										<td>D2<input type="radio" value="d2" name="4"/></td>
-										<td>D3<input type="radio" value="d3" name="4" /></td>
-										<td>D4<input type="radio" value="d4" name="4" /></td>
-								 </tr> 
-								 <tr>
-										<td>F1<input type="radio" value="f1" name="5" /></td>
-										<td>F2<input type="radio" value="f2" name="5"/></td>
-										<td>F3<input type="radio" value="f3" name="5" /></td>
-										<td>F4<input type="radio" value="f4" name="5" /></td>
-								 </tr> 
-								 <tr> <td colspan="2"> 
-								 <input type="button" value="Corregir" onclick="comprobarRadio(respuestaCorrecta)" /></td></tr>
-								</table>
-								  <div id="solucion"></div>
-								 </div>
-							</td>
-						</tr>
-					</table>				
-				</div>
-
-				<div class="row">
-				<br>
-					<table>
-						<thead>
-							<th style="width:70%; background-color:rgba(244,121,32,1);"><h2>Tema 2</h2></th>
-							<th style="width:30%; background-color:rgba(244,121,32,.3);"><h4>Actividad 2</h4></th>
-						</thead>
-
-						<tr>
-							<td colspan="2">
-								<form action="">
-									<table>
-										<tr>
-											<td>
-												<label for="p1">1. ¿Qué significa el acrónimo UML?</label><br>
-												<input type="radio" name="p1[]" id="respuesta">&nbsp;a. Uniform Model Language <br>
-												<input type="radio" name="p1[]" id="respuesta">&nbsp;b. Unified Modeling Language <br>
-												<input type="radio" name="p1[]" id="respuesta">&nbsp;c. Unitaria Molding Language <br>
-												<input type="radio" name="p1[]" id="respuesta">&nbsp;d. Unified Molding Language <br>								
-
-												<br>
-												<label for="p2">2. El UML sólo se usa para modelar software</label><br>
-												<input type="radio" name="p2[]" id="respuesta">&nbsp;a. Verdadero <br>
-												<input type="radio" name="p2[]" id="respuesta">&nbsp;b. Falso <br>
-											</td>
-
-											<td>
-												<label for="p3">3. Un diagrama de clases es una visión dinámica de las clases de un sistema</label><br>
-												<input type="radio" name="p3[]" id="respuesta">&nbsp;a. Verdadero <br>
-												<input type="radio" name="p3[]" id="respuesta">&nbsp;b. Falso <br>
-
-												<br><br>
-
-												<label for="p1">4. ¿Cuál es el apode del grupo de científicos más notablemente asociados con el UML?</label><br>
-												<input type="radio" name="p4[]" id="respuesta">&nbsp;a. La pandilla de los cuatro <br>
-												<input type="radio" name="p4[]" id="respuesta">&nbsp;b. Los tres mosqueteros <br>
-												<input type="radio" name="p4[]" id="respuesta">&nbsp;c. El dúo dinámico <br>
-												<input type="radio" name="p4[]" id="respuesta">&nbsp;d. Los tres amigos <br>											
-											</td>
-										</tr>
-									</table>				
-								</form>
-							</td>
-						</tr>
-					</table>
-					<br><br>					
-				</div>
-			</div>
-
-			<div class="container" id="tema2">
-				<div class="row">
-				<br>
-					<table>
-						<thead>
-							<th style="width:70%; background-color:rgba(80,183,72,1);"><h2>Tema 3</h2></th>
-							<th style="width:30%; background-color:rgba(80,183,72,.3);"><h4>Actividad 1</h4></th>
-						</thead>
-
-						<tr>
-							<td colspan="2">
-								<form action="">
-									<table>
-										<tr>
-											<td>
-										
-											</td>
-										</tr>
-									</table>				
-								</form>
-							</td>
-						</tr>
-					</table>					
-				</div>
-
-				<div class="row">
-				<br>
-					<table>
-						<thead>
-							<th style="width:70%; background-color:rgba(240,180,41,1);"><h2>Tema 4</h2></th>
-							<th style="width:30%; background-color:rgba(240,180,41,.3);"><h4>Actividad 1</h4></th>
-						</thead>
-
-						<tr>
-							<td colspan="2">
-
-							</td>
-						</tr>
-					</table>
-					<br><br>					
-				</div>
-			</div>
-
-			<div class="container" id="tema3">
-				<div class="row">
-				<br>
-					<table>
-						<thead>
-							<th style="width:70%; background-color:rgba(67,99,244,1);"><h2>Tema 5</h2></th>
-							<th style="width:30%; background-color:rgba(67,99,244,.3);"><h4>Actividad Final</h4></th>
-						</thead>
-					</table>				
-				</div>
-
-				<br>
-
-				<div class="row">
-					<table>
-						<tr>
-							<td>
-						<p>Un sistema integrado de manejo de personal contiene la siguiente información:</p>
-						<br>
-
-						<p><strong>Proyectos del centro de costo:</strong></p>
-						<li style="text-align:left; list-style: square inside">Código del proyecto</li>
-						<li style="text-align:left; list-style: square inside">Nombre del proyecto</li>
-						<li style="text-align:left; list-style: square inside">En un proyecto pueden participar varios empleados</li>
-						<li style="text-align:left; list-style: square inside">Un empleado puede participar o haber participado en varios proyectos.</li>
-						<br>
-
-						<p><strong>Cargos:</strong></p>
-						<li style="text-align:left; list-style: square inside">Existe una serie de cargos a nivel de toda la empresa para los cuales se tiene una codificación estándar (Código, Nombre…).</li>
-
-						<br>
-						<p><strong>Empleados:</strong></p>
-						<p>La información del empleado es de suma importancia y se deben tener en cuenta aspectos tales como:</p>
-						<li style="text-align:left; list-style: square inside">Cédula, Nombre, Dirección, Teléfono.</li>
-						<li style="text-align:left; list-style: square inside">Los estudios realizados con su respectivo nivel (Primaria, Secundaria, Pregrado, Postgrado, Maestría, Doctorado) precisando el título obtenido y la institución.</li>
-						<li style="text-align:left; list-style: square inside">Los cargos que ha desempeñado a lo largo de su historia laboral con la empresa, historia de los sueldos con sus respectivas fechas de variación.</li>
-						<li style="text-align:left; list-style: square inside">Los proyectos en que participa o ha participado el empleado.</li>
-
-						<br><br>
-						<p><strong>Se solicita:</strong></p>
-						<li style="text-align:left; list-style: square inside">Realizar el diagrama Entidad Relación (ER)</li>
-						<li style="text-align:left; list-style: square inside">Pasar el diagrama ER al modelo relacional en UML (diseño lógico).</li>
-
-						<br><br>							
-							</td>
-						</tr>
-					</table>
-				</div>
-			</div>
+		<section id="actividades">
+			<iframe src="temas/actividad1.html" frameborder="0" id="tema1" style="width:100%; height:100vh; scrolling:auto; overflow:hidden;"></iframe>
+			<iframe src="temas/actividad2.html" frameborder="0" id="tema2" style="width:100%; height:100vh; scrolling:auto; overflow:hidden;"></iframe>
+			<iframe src="temas/actividad3.html" frameborder="0" id="tema3" style="width:100%; height:100vh; scrolling:auto; overflow:hidden;"></iframe>
+			<iframe src="temas/actividad4.html" frameborder="0" id="tema4" style="width:100%; height:100vh; scrolling:auto; overflow:hidden;"></iframe>
+			<iframe src="temas/actividad5.html" frameborder="0" id="tema5" style="width:100%; height:100vh; scrolling:auto; overflow:hidden;"></iframe>					
 		</section>
 
 		<footer>
