@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+		<style type="text/css">
+		*{
+			font-family:Arial;
+		}
+
+		body{
+			overflow:hidden;
+		}
+
+		section{
+			width:90%;
+			height:auto;
+			margin:auto;
+			font-size:12px;
+		}
+		
+		table{
+			width:100%;			
+		}
+
+		input[type="radio"]{
+			font-size:13px; 
+			text-align:justify;
+			line-height: 1.5em;
+		}
+
+		div#contenedor{
+			width: 35em;
+			overflow: hidden;
+			margin: 0 auto;
+			background-color: #000000;
+			padding: 0.5em;
+			color: #FFF;
+		}
+	</style>
+
+	<script>
+		var respuestaCorrecta = new Array("a2", "b1", "c2", "d4", "e2");
+		
+		function comprobarRadio(matriz){
+			var numeroRespuestasOK=0;
+			var numeroRespuestasKO=0;
+			var solucion = document.getElementById("solucion");
+			var tablaResultados ="<table border='1'>";
+			
+			for(j=0; j< matriz.length; j++){
+			var radios = document.getElementsByName(j+1);
+				for(i=0; i< radios.length;i++){
+					if (radios[i].checked){
+					var valor =  radios[i].value;
+						if(valor == matriz[j]) {
+						tablaResultados+= "<tr><td>Respuesta correcta: </td>"+ "<td>"+ valor + "</td></tr>";
+						numeroRespuestasOK++;
+						break;
+						}else {
+						tablaResultados+= "<tr><td>Respuesta incorrecta: </td><td>"+ valor + "</td></tr>";
+						numeroRespuestasKO++;
+						break;
+						}
+					}
+				}
+			}
+
+			var numeroRespuestasNulas=matriz.length - (numeroRespuestasOK + numeroRespuestasKO);
+			tablaResultados+="<tr><td>Resultado: </td><td>Respuestas correctas: "+numeroRespuestasOK+"<br/>Respuestas incorrectas: "+ numeroRespuestasKO+"<br/>Respuestas en blanco: "+ numeroRespuestasNulas+"</td></tr></table>";
+			solucion.innerHTML = tablaResultados;
+	}
+	</script>
+</head>
+<body>
+	
+	<section id="tema2">
+			<div class="container">
+				<div class="row">
+					<table>
+						<thead>
+							<th style="width:70%; background-color:rgba(244,121,32,1);"><h2>Tema 2</h2></th>
+							<th style="width:30%; background-color:rgba(244,121,32,.3);"><h4>Actividad 1</h4></th>
+						</thead>
+					</table>
+
+					<table>
+						<tr>
+							<td style="width:50%;">
+								<label for="p1">1. El modelo Entidad-Relación varía según el Sistema Gestor de Base de Datos que se utilice</label><br>
+								a. Verdadero &nbsp; b. Falso <br>
+
+								<br>
+								<label for="p2">2. Los atributos son las características de una entidad</label><br>
+								a. Verdadero &nbsp;	b. Falso <br>
+								
+								<br>
+								<label for="p3">3. Las entidades se clasifican en:</label><br>
+								a. Simples, compuestas, monovaluadas y multivaluadas &nbsp; b. Débiles y fuertes <br>
+								c. Deirvadas, propias, compuestas &nbsp;&nbsp;&nbsp; &nbsp; d. Simples y fuertes <br>
+
+								<br>
+								<label for="p4">4. Observe la siguiente tabla de clientes:</label><br>
+								<img src="../img/tablaclientes.jpg" style="width:400px;"><br>
+
+								<p>Aplicando la primera forma normal quedaría:</p>
+								a. <img src="../img/tabla1.jpg" style="width:100px;"> &nbsp; b. <img src="../img/tabla2.jpg" style="width:300px;"><br>
+							</td>
+
+							<td style="width:50%;">
+								c. <img src="../img/tabla3.jpg" style="width:200px;"> &nbsp; d. <img src="../img/tabla4.jpg" style="width:200px;">
+								<br>
+
+								<br>
+								<label for="p5">5. Observe el siguiente diagrama e indique cuántas relaciones existen:</label><br><br>
+								<img src="../img/biblioteca1.png" alt="diagramaER" style="width:350px; height:auto;"><br><br>
+								a. 1 binaria &nbsp; b. 2 binarias &nbsp; c. 1 ternaria &nbsp; d. 1 binaria y 1 ternaria <br>
+							</td>
+						</tr>
+					</table>
+
+					<br><br>
+
+					<table>
+						<tr>
+							<td style="margin-left:30px;">
+								<h2 style="float:left; margin-top:-1px;">Opciones de Respuesta:&nbsp;</h2>
+								<table style="width:80%; float:left; border:1px; border-style:solid; border-color:gray">
+									<tr>
+										<td style="font-weight: 700; background-color:rgba(0,0,0,1); color:white;">1.</td>
+										<td>a&nbsp;<input type="radio" value="a1" name="1" /></td>
+										<td>b&nbsp;<input type="radio" value="a2" name="1"/></td>
+
+								 		<td style="font-weight: 700; background-color:rgba(0,0,0,1); color:white;">2.</td>
+										<td>a&nbsp;<input type="radio" value="b1" name="2" /></td>
+										<td>b&nbsp;<input type="radio" value="b2" name="2"/></td>
+
+								 		<td style="font-weight: 700; background-color:rgba(0,0,0,1); color:white;">3.</td>
+										<td>a&nbsp;<input type="radio" value="c1" name="3" /></td>
+										<td>b&nbsp;<input type="radio" value="c2" name="3"/></td>
+										<td>c&nbsp;<input type="radio" value="c3" name="3" /></td>
+										<td>d&nbsp;<input type="radio" value="c4" name="3" /></td>
+
+								 		<td style="font-weight: 700; background-color:rgba(0,0,0,1); color:white;">4.</td>
+										<td>a&nbsp;<input type="radio" value="d1" name="4" /></td>
+										<td>b&nbsp;<input type="radio" value="d2" name="4"/></td>
+										<td>c&nbsp;<input type="radio" value="d3" name="4" /></td>
+										<td>d&nbsp;<input type="radio" value="d4" name="4" /></td>
+
+								 		<td style="font-weight: 700; background-color:rgba(0,0,0,1); color:white;">5.</td>
+										<td>a&nbsp;<input type="radio" value="e1" name="5" /></td>
+										<td>b&nbsp;<input type="radio" value="e2" name="5"/></td>
+										<td>c&nbsp;<input type="radio" value="e3" name="5" /></td>
+										<td>d&nbsp;<input type="radio" value="e4" name="5" /></td>
+
+										<td><input type="button" value="Corregir" onclick="comprobarRadio(respuestaCorrecta)"/></td>							 			
+								 	</tr>
+								</table>
+								
+									<div id="solucion"></div>
+								</div>
+							</td>
+						</tr>
+					</table>
+					<br>
+				</div>
+			</div>
+		</section>
+
+</body>
+</html>

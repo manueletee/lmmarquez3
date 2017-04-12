@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		*{
+			font-family:Arial;
+		}
+
+		body{
+			overflow:hidden;
+		}
+
+		section{
+			width:90%;
+			height: auto;
+			margin:auto;
+			font-size:12px;
+		}
+		
+		.table{
+			width:100%;
+			margin:auto;
+			border-spacing:10px;
+			border-collapse:separate;
+		}
+
+		input[type="radio"]{
+			font-size:13px; 
+			text-align:justify;
+			line-height: 1.5em;
+		}
+
+		div#contenedor{
+			width: 35em;
+			overflow: hidden;
+			margin: 0 auto;
+			background-color: #000000;
+			padding: 0.5em;
+			color: #FFF;
+		}
+	</style>
+
+	<script>
+		var respuestaCorrecta = new Array("a1", "b1", "c1", "d2", "e2", "f1");
+		
+		function comprobarRadio(matriz){
+			var numeroRespuestasOK=0;
+			var numeroRespuestasKO=0;
+			var solucion = document.getElementById("solucion");
+			var tablaResultados ="<table border='1'>";
+			
+			for(j=0; j< matriz.length; j++){
+			var radios = document.getElementsByName(j+1);
+				for(i=0; i< radios.length;i++){
+					if (radios[i].checked){
+					var valor =  radios[i].value;
+						if(valor == matriz[j]) {
+						tablaResultados+= "<tr><td>Respuesta correcta: </td>"+ "<td>"+ valor + "</td></tr>";
+						numeroRespuestasOK++;
+						break;
+						}else {
+						tablaResultados+= "<tr><td>Respuesta incorrecta: </td><td>"+ valor + "</td></tr>";
+						numeroRespuestasKO++;
+						break;
+						}
+					}
+				}
+			}
+
+			var numeroRespuestasNulas=matriz.length - (numeroRespuestasOK + numeroRespuestasKO);
+			tablaResultados+="<tr><td>Resultado: </td><td>Respuestas correctas: "+numeroRespuestasOK+"<br/>Respuestas incorrectas: "+ numeroRespuestasKO+"<br/>Respuestas en blanco: "+ numeroRespuestasNulas+"</td></tr></table>";
+			solucion.innerHTML = tablaResultados;
+	}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
+
+		<section id="tema3">
+			<div class="container">
+				<div class="row">
+				<br>
+					<table class="table">
+						<thead>
+							<th style="width:70%; background-color:rgba(80,183,72,1);"><h2>Tema 3</h2></th>
+							<th style="width:30%; background-color:rgba(80,183,72,.3);"><h4>Actividad 1</h4></th>
+						</thead>
+					</table>
+
+					<table>
+						<tr>
+							<td style="width:40%;">
+								<label for="p1">1. Un objeto es la instancia de una clase </label><br><br>
+								a. Verdadero <br>
+								b. Falso <br>							
+
+								<br>
+								<label for="p2">2. Heredar es crear otras clases a partir de la primera</label><br><br>
+								a. Verdadero <br>
+								b. Falso <br>
+								
+								<br>
+								<label for="p3">3. Los métodos de una clase abstracta pueden ser utilizadas por otras subclases</label><br><br>
+								a. Verdadero <br>
+								b. Falso <br>	
+
+								<br>
+								<label for="p4">4. Una clase se representa con un rectángulo con 3 subdivisiones, en la primera se escribe el nombre de la clase con letra cursiva, y en las siguientes los atributos y métodos.</label> <br><br>
+								a. Verdadero <br>
+								b. Falso <br>
+
+								<br>
+								<label for="p5">Las restricciones permiten comprobar las características del perfil y la consistencia entre los diagramas del modelo, específicamente entre los diagramas de colaboración y diagramas de clase.</label><br><br>
+								a. Verdadero <br>
+								b. Falso <br>
+							</td>
+
+							<td>
+								<label for="p6">6. De las siguientes figuras, indique qué tipo de relación es: </label><br><br>
+								<img src="../img/2015-09-06_10h44_04.png" style="width:200px;"><br><br>
+
+								a. (1) Generalización  (2) Composición  (3) Agregación <br>
+								b. (1) Herencia  (2) Agregación  (3) Especialización <br>
+								c. (1) Realización  (2) Instanciación  (3) Composición <br>
+								d. (1) Agregación  (2) Asociación  (3) Herencia <br>
+							</td>
+
+							<td>
+								<h1>Opciones de Respuesta:</h1>
+								<table style="float:left; border:1px; border-style:solid; border-color:gray">
+									<tr>
+										<td style="font-weight: 700;">1.</td>
+										<td>a&nbsp;<input type="radio" value="a1" name="1" /></td>
+										<td>b&nbsp;<input type="radio" value="a2" name="1"/></td>
+								 	</tr> 
+								 	
+								 	<tr>
+								 		<td style="font-weight: 700;">2.</td>
+										<td>a&nbsp;<input type="radio" value="b1" name="2" /></td>
+										<td>b&nbsp;<input type="radio" value="b2" name="2"/></td>
+								 	</tr> 
+								 	
+								 	<tr>
+								 		<td style="font-weight: 700;">3.</td>
+										<td>a&nbsp;<input type="radio" value="c1" name="3" /></td>
+										<td>b&nbsp;<input type="radio" value="c2" name="3"/></td>
+								 	</tr> 
+								 	
+								 	<tr>
+								 		<td style="font-weight: 700;">4.</td>
+										<td>a&nbsp;<input type="radio" value="d1" name="4" /></td>
+										<td>b&nbsp;<input type="radio" value="d2" name="4"/></td>
+								 	</tr> 
+								 	
+								 	<tr>
+								 		<td style="font-weight: 700;">5.</td>
+										<td>a&nbsp;<input type="radio" value="e1" name="5" /></td>
+										<td>b&nbsp;<input type="radio" value="e2" name="5"/></td>
+								 	</tr>
+
+								 	<tr>
+								 		<td style="font-weight: 700;">6.</td>
+										<td>a&nbsp;<input type="radio" value="f1" name="6" /></td>
+										<td>b&nbsp;<input type="radio" value="f2" name="6"/></td>
+										<td>c&nbsp;<input type="radio" value="f3" name="6" /></td>
+										<td>d&nbsp;<input type="radio" value="f4" name="6" /></td>
+								 	</tr>
+
+								 	<tr>
+								 		<td colspan="2">
+								 			<input type="button" value="Corregir" onclick="comprobarRadio(respuestaCorrecta)"/>
+								 		</td>
+								 	</tr>
+								</table>
+								
+									<div id="solucion"></div>
+								</div>
+							</td>
+						</tr>
+					</table>					
+					<br><br>					
+				</div>
+			</div>
+		</section>
+	
+</body>
+</html>
