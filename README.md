@@ -26,3 +26,5 @@ Escuela Digital (https://ed.team)
 Collective Cloud Perú (https://www.youtube.com/channel/UCR7OdhrbfbIefFgcEiZI2FA)
 
 Diagrama (http://recursosformacion.com/wordpress/2015/09/oopv-disenando-la-aplicacion-el-diagrama-de-clases/)
+
+Ejercicio (https://issuu.com/aldivadyer/docs/5_uml_rev1)
