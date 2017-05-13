@@ -244,7 +244,7 @@
 			<iframe src="temas/actividad5.html" frameborder="0" id="tema5" style="width:100%; height:100vh; scrolling:auto; overflow:hidden;"></iframe>					
 		</section>
 
-		<!-- Pie de página -->
+			<!-- Pie de página -->
 		<footer>
 			<div class="container">
 				<div class="row">
@@ -259,18 +259,12 @@
 							<tr>
 								<td>
 									<img src="img/commons.png" alt="license" style="width:100px; height:auto;">
-									<br>
+									<br><br>
 								</td>
 							</tr>
 
 							<tr>
-								<td>Eres el visitante No.</td>
-							</tr>
-
-							<tr>
-								<td>
-									<center><a href="https://www.cerotec.net/estadisticas-101509/manueletee.github.io" title="contador y estadísticas"><img src="https://www.cerotec.net/contador.php?t=1&s=1&i=101509" alt="Contador de visitas y estadísticas"></a> <br><a href='https://www.cerotec.net/contadores/' style='font-size:12px;' ></a></center>
-								</td>
+								<td>Eres el visitante No. &nbsp;<div class="views"></div></td>
 							</tr>
 
 							<tr>
@@ -286,8 +280,16 @@
 			</div>
 		</footer>
 	</main>
-
+	
 	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript">
+		//Hacemos la Function para abrir el contador de visitas
+		function recargar_views(){
+			$(".views").load("http://contadorlmm.byethost7.com/contador.txt");
+		}
+		// Establecemos el temporizador a 1 segundos
+		timer = setInterval("recargar_views()", 1000);
+	</script>
 	
 </body>
 </html>
