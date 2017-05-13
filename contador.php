@@ -1,7 +1,7 @@
 
 <?php
 
-$archivo = "contador.txt"; // Archivo en donde se acumulará el numero de visitas
+$archivo = "http://contadorlmm.byethost7.com/contador.txt"; // Archivo en donde se acumulará el numero de visitas
 $abre = fopen($archivo, "r"); // Abrimos el archivo para solamente leerlo (r de read)
 $total = fread($abre, filesize($archivo)); // Leemos el contenido del archivo(filesize "detectara" la longitud de Bytes de $archivo la cual desconocemos)
 fclose($abre); // Cerramos la conexión al archivo
