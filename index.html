@@ -520,18 +520,12 @@
 							<tr>
 								<td>
 									<img src="img/commons.png" alt="license" style="width:100px; height:auto;">
-									<br><br>
+									<br>
 								</td>
 							</tr>
 
 							<tr>
-								<td>Eres el visitante No.</td>
-							</tr>
-							
-							<tr>
-								<td>
-									<a href="http://www.reliablecounter.com" target="_blank"><img src="http://www.reliablecounter.com/count.php?page=https://manueletee.github.io/lmmarquez3/&digit=style/plain/6/&reloads=0" alt="" title="" border="0"></a><br /><a href="http://www.fabbly.com" target="_blank" style="font-family: Geneva, Arial; font-size: 18px; color: #330010; text-decoration: none;">3d Printing Marketplace</a>
-								</td>
+								<td>Eres el visitante No. &nbsp;<div class="views"></div></td>
 							</tr>
 
 							<tr>
@@ -549,6 +543,15 @@
 	</main>
 	
 	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript">
+		//Hacemos la Function para abrir el contador de visitas
+		function recargar_views(){
+			$(".views").load("contador.txt");
+		}
+
+		// Establecemos el temporizador a 1 segundos
+		timer = setInterval("recargar_views()", 1000);
+	</script>
 	
 </body>
 </html>
