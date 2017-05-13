@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>Material de Lectura</title>
+	<meta charset="UTF-8">
+	<!-- Etiquetas SEO -->
+	<meta content="Luis Manuel Márquez Rodríguez" name="author">
+	<meta content="Generar conocimiento sobre el Modelado de Datos con UML" name="description">
+	<meta content="UML, Unified Modeling Language, diagrama de clases" name="keywords">
+	<!-- Etiqueta visualización viewport -->
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+			font-family:Arial;
+			box-sizing: border-box;
+		}
+
+		main{
+			width:100%;
+		}
+
+		#header{
+			top:0;
+			left:0;
+			margin:auto;
+			width:1366px;
+			min-width: 1024px;
+			height:100px;
+			position:fixed;
+			z-index:1000;
+			background-color:rgba(255,255,255,1);
+			-webkit-box-shadow: 3px 10px 13px -6px rgba(0,0,0,0.45);
+			-moz-box-shadow: 3px 10px 13px -6px rgba(0,0,0,0.45);
+			box-shadow: 3px 10px 13px -6px rgba(0,0,0,0.45);
+		}
+
+		.subheader{
+			width:90%;
+			margin:5px auto;
+			border-collapse: separate;
+		}
+
+		.col1{
+			width:300px;
+			text-align: center;
+		}
+
+		.col2{
+			width:90%;
+			margin:auto;
+			padding-left:12px;
+		}
+
+		.logo{
+			width:250px;
+			height:auto;
+			padding:10px;
+		}
+
+		ul, li{
+			text-align:center;
+			list-style: none;
+		}
+
+		.nav li a{
+			color:#000;
+			min-width:150px;
+			display:block;
+			padding:10px 15px;
+			background-color:rgba(255,255,255,1);
+			text-decoration: none;
+		}
+
+		/* usando la pseudoclase hover */
+		.nav li a:hover{
+			background-color:rgba(63,137,201,.3);
+		}
+
+		.nav >li{
+			float:left;
+		}
+
+		.nav li ul{
+			display:none;
+			position:absolute;
+			min-width:150px;
+		}
+
+		.nav li:hover > ul{
+			display:block;
+		}
+
+		.nav li ul li{
+			z-index:1002;
+			position:relative;
+		}
+
+		#presentacion{
+			width:100%;
+			height:60vh;
+			position:relative;
+			background-image:url('img/read.jpg');
+			background-repeat:no-repeat;
+			background-attachment: fixed;
+			background-size:100%;
+			background-origin: content-box;
+			background-position: top center;
+		}
+
+		section{
+			width:100%;
+			height:100vh;
+		}
+
+		.row{
+			width:90%;
+			margin:auto;
+		}
+
+		.contenedor{
+			width:100%;
+			margin:auto;
+			overflow:auto;
+			display:inline-flex;
+		}
+
+		embed{
+		    left: 50%;
+		    top: 50%;
+		    margin-top:400px;
+			position: absolute;
+		    transform: translate(-50%, -50%);
+		    -webkit-transform: translate(-50%, -50%);
+		}
+
+		footer{
+			width:100%;
+			max-height:20%;
+			vertical-align: middle;
+			background-color:rgba(0,88,131,1);
+		}
+
+		.aside{
+			width: 48%;
+			margin:30px auto;
+			border-color:yellow solid 2px;
+			display:inline-block;
+		}
+
+		.aside a{
+			color:rgba(255,255,255,1);
+			text-decoration: none;
+		}
+
+		.block{
+			width:100%;
+			border-spacing: 10px;
+			border-collapse: separate;
+			color:rgba(255,255,255,1);
+		}
+
+		#counter{
+			color:rgba(253,245,0,1);
+			text-align:center;
+			font-size: 38px;
+			font-weight: 700;
+		}
+
+	</style>
+
+	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript">
+		window.onload = cambiar();
+
+		function cambiar(esto){
+			vista=document.getElementById(esto).style.display;
+			if (vista=='none'){
+				vista='block';
+			}else{
+				vista='none';
+			}
+
+			document.getElementById(esto).style.display = vista;
+		}
+	</script>
+</head>
+<body>
+
+	<main>
+		<div id="header"> <!-- Contenedor del menú -->
+			<table class="subheader">
+				<tr>
+					<td class="col1">
+						<a href="https://www.unad.edu.co/"><img src="img/unad.png" class="logo" alt="Universidad Nacional Abierta y a Distancia"></a>
+					</td>
+
+					<td class="col2">
+						<ul class="nav">
+							<li><a href="index.html">Inicio</a></li>
+							<li><a href="lecturas.html">Recursos</a>
+								<ul>
+									<li><a href="#lectura1" onclick="cambiar('ejemplo'); return false;">Lectura 1</a></li>
+									<li><a href="#lectura2" onclick="cambiar('ejemplo2'); return false;">Lectura 2</a></li>
+									<li><a href="#lectura3" onclick="cambiar('ejemplo3'); return false;">Lectura 3</a></li>
+									<li><a href="#lectura4" onclick="cambiar('ejemplo4'); return false;">Lectura 4</a></li>
+									<li><a href="#lectura5" onclick="cambiar('ejemplo5'); return false;">Lectura 5</a></li>
+								</ul>
+							</li>
+							<li><a href="multimedia.html">Multimedia</a>
+								<ul>
+									<li><a href="multimedia.html#video1">Video 1</a></li>
+									<li><a href="multimedia.html#video2">Video 2</a></li>
+								</ul>
+							</li>
+							<li><a href="actividades.html">Actividades</a>
+								<ul>
+									<li><a href="actividades.html#tema1">Tema 1</a></li>
+									<li><a href="actividades.html#tema2">Tema 2</a></li>
+									<li><a href="actividades.html#tema3">Tema 3</a></li>
+									<li><a href="actividades.html#tema4">Tema 4</a></li>
+									<li><a href="actividades.html#tema5">Tema 5</a></li>
+								</ul>
+							</li>
+							<li><a href="autor.html">Autor</a></li>
+						</ul>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<section id="presentacion"></section>
+
+		<section id="lecturas">
+			<div class="contenedor">
+				<div class="fila">
+					<embed src="docs/Lectura1.pdf" width="900" height="500" id="ejemplo" style="display: none;"">
+					<embed src="docs/Lectura2.pdf" width="900" height="500" id="ejemplo2" style="display: none;"">
+					<embed src="docs/Lectura3.pdf" width="900" height="500" id="ejemplo3" style="display: none;"">
+					<embed src="docs/Lectura4.pdf" width="900" height="500" id="ejemplo4" style="display: none;"">
+					<embed src="docs/Lectura5.pdf" width="900" height="500" id="ejemplo5" style="display: none;"">
+				</div>
+			</div>				
+		</section>
+
+		<!-- Pie de página -->
+		<footer>
+			<div class="container">
+				<div class="row">
+					<div class="aside">
+						<table class="block">
+							<tr>
+								<td colspan="2">
+									<small>Diseño y Creación: <a href="autor.html">Luis Márquez</a> &#174;</small>
+									<br>
+								<td>
+							</tr>
+							<tr>
+								<td>
+									<img src="img/commons.png" alt="license" style="width:100px; height:auto;">
+									<br>
+								</td>
+							</tr>
+
+							<tr>
+								<td>Eres el visitante No.</td>
+							</tr>
+
+							<tr>
+								<td>
+									<center><a href="https://www.cerotec.net/estadisticas-101509/manueletee.github.io" title="contador y estadísticas"><img src="https://www.cerotec.net/contador.php?t=1&s=1&i=101509" alt="Contador de visitas y estadísticas"></a> <br><a href='https://www.cerotec.net/contadores/' style='font-size:12px;' ></a></center>
+								</td>
+							</tr>
+
+							<tr>
+								<td><img src="img/sellos_calidad.png" alt="Calidad" style="width:65%; height:auto;"></td>
+							</tr>
+						</table>
+					</div>
+
+					<div class="aside">
+						<a class="twitter-timeline" data-height="300" href="https://twitter.com/Lmmarquez74">Tweets by Lmmarquez74</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</main>
+
+
+</body>
+</html>
